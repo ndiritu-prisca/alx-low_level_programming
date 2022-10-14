@@ -18,8 +18,8 @@ int main(void)
 	/*Statements*/
 	printf("Size of a char: %zu bytes\n", sizeof(charVar));
 	printf("Size of an int: %zu bytes\n", sizeof(intVar));
-	printf("Size of a long: %zu bytes\n", sizeof(longVar));
-	printf("Size of a long long: %zu bytes\n", sizeof(long2Var));
+	printf("Size of a long int: %zu bytes\n", sizeof(longVar));
+	printf("Size of a long long int: %zu bytes\n", sizeof(long2Var));
 	printf("Size of a float: %zu bytes\n", sizeof(floatVar));
 	return (0);
 }
