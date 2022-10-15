@@ -33,8 +33,8 @@ int main(void)
 
 	else if (d > 6 && d != 0)
 	{
-		printf("Last digit of %i", n);
-		printf(" is %i", d);
+		printf("Last digit of %i", abs(n));
+		printf(" is %i", abs(d));
 		printf(" and is less than 6 and not 0\n");
 	}
 	return (0);
