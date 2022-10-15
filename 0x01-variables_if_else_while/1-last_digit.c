@@ -31,7 +31,7 @@ int main(void)
 		printf(" and is 0\n");
 	}
 
-	else if (d > 6, d != 0)
+	else if (d > 6 && d != 0)
 	{
 		printf("Last digit of %i", n);
 		printf(" is %i", d);
