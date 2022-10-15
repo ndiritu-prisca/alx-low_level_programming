@@ -31,10 +31,10 @@ int main(void)
 		printf(" and is 0\n");
 	}
 
-	else if (d > 6 && d != 0)
+	else if (d < 6)
 	{
-		printf("Last digit of %i", abs(n));
-		printf(" is %i", abs(d));
+		printf("Last digit of %i", n);
+		printf(" is %i", d);
 		printf(" and is less than 6 and not 0\n");
 	}
 	return (0);
