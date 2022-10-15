@@ -16,8 +16,8 @@ int main(void)
 	while (x <= 'Z')
 	{
 		putchar(tolower(x));
+		x++;
 	}
-	x++;
 
 	return (0);
 }
