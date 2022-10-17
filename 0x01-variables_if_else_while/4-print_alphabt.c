@@ -15,21 +15,18 @@ int main(void)
 	char ch = 'a';
 	char RemoveChar = ch;
 
-	while (ch <= 'z')
+	while (ch <= 'z' && ch != 'q')
 	{
 		putchar(ch);
 		ch++;
 	}
 
-	while (ch = 'q')
+	while (ch <= 'z' && ch != 'e')
 	{
-		RemoveChar;
+		putchar(ch);
+		ch++;
 	}
 
-	while (ch = 'e')
-	{
-		RemoveChar;
-	}
 	putchar('\n');
 
 	return (0);
