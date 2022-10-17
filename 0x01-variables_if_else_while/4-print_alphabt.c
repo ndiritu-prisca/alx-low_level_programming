@@ -6,14 +6,13 @@
 
 /**
   *main - Entry
-  *char (ch, RemoveChar)
+  *
   *Return: Always 0 (Success)
   */
 
 int main(void)
 {
 	char ch = 'a';
-	char RemoveChar = ch;
 
 	while (ch <= 'z' && ch != 'q')
 	{
