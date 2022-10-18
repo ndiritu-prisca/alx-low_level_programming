@@ -21,12 +21,12 @@ int main(void)
 	while (a < 58)
 	{
 		b = 48;
-		while (b < 57)
+		while (b < 58)
 		{
 			c = a;
 			while (c < 58)
 			{
-				d = b + 1;
+				d = b;
 				while (d < 58)
 				{
 					putchar(a);
