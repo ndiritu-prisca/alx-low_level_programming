@@ -23,10 +23,10 @@ int main(void)
 		b = 48;
 		while (b < 58)
 		{
+			d = b + 1;
 			c = a;
 			while (c < 58)
 			{
-				d = b;
 				while (d < 58)
 				{
 					putchar(a);
@@ -41,6 +41,7 @@ int main(void)
 					}
 					d++;
 				}
+				d = '0';
 				c++;
 			}
 			b++;
