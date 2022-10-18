@@ -21,14 +21,15 @@ int main(void)
 		y = x + 1;
 		while (y < 58)
 		{
-			if (x != y)
+			putchar(x);
+			putchar(y);
+
+			if (x < '8' || y < '9')
 			{
-				putchar(x);
-				putchar(y);
+				putchar(44);
+				putchar(32);
 				
 			}
-	 		putchar(44);
-			putchar(32);
 			y++;
 		}
 		x++;
