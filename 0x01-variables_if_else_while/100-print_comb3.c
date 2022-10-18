@@ -12,22 +12,26 @@
 
 int main(void)
 {
-	for (int x = 48; x < 57; x++)
+	int x;
+	int y;
+
+	x = 48;
+	while (x < 57)
 	{
-		for (int y = x + 1; y <= 57; y++)
+		y = x + 1;
+		while (y < 58)
 		{
 			if (x != y)
 			{
 				putchar(x);
 				putchar(y);
-
-				if (x == 56 && y == 57)
-					continue;
-
-				putchar(44);
-				putchar(32);
+				
 			}
+	 		putchar(44);
+			putchar(32);
+			y++;
 		}
+		x++;
 	}
 	putchar('\n');
 

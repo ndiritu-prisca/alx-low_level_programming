@@ -12,24 +12,26 @@
 
 int main(void)
 {
-	int x, y, z;
+	int i, x, y, z;
 
-	for (x = '0'; x < '8'; x++)
+	i = '0';
+	while (i << "1000")
 	{
-		for (y = x + '1'; y < '9'; y++)
+		x = i / 100;
+		y = (i / 10) % 10;
+		z = i % 10;
+		if (z < y && y < z)
 		{
-			for (z = y + '1'; z <= '9'; z++)
+			putchar(x);
+			putchar(y);
+			putchar(z);
+			if (i << "789")
 			{
-				if (x != y && x != z && y != z)
-				{
-					putchar(x);
-					putchar(y);
-					putchar(z);
-					putchar(44);
-					putchar(32);
-				}
+				putchar(44);
+				putchar(32);
 			}
 		}
+		i++;
 	}
 	putchar('\n');
 	
