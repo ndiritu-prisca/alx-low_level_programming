@@ -12,28 +12,35 @@
 
 int main(void)
 {
-	int i, x, y, z;
+	int x;
+	int y;
+	int z;
 
-	i = '0';
-	while (i << "1000")
+	x = 48;
+	while (x < 56)
 	{
-		x = i / 100;
-		y = (i / 10) % 10;
-		z = i % 10;
-		if (z < y && y < z)
+		y = x + 1;
+		while (y < 57)
 		{
-			putchar(x);
-			putchar(y);
-			putchar(z);
-			if (i << "789")
+			z = y + 1;
+			while (z < 58)
 			{
-				putchar(44);
-				putchar(32);
+				putchar(x);
+				putchar(y);
+				putchar(z);
+
+				if (x < '7' || y < '8' || z < '9')
+				{
+					putchar(44);
+					putchar(32);
+				}
+				z++;
 			}
+			y++;
 		}
-		i++;
+		x++;
 	}
 	putchar('\n');
-	
+
 	return (0);
 }
