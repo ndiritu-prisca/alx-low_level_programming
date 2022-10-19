@@ -18,7 +18,8 @@ int main(void)
 
 	int _putchar(char c);
 	{
-		return (write(1, &"_putchar\n", 9));
+		write(1, &"_putchar\n", 9);
+		return (0);
 	}
 
 	return (0);
