@@ -3,22 +3,20 @@
 #include <unistd.h>
 
 /**
-  *_putchar - writes character to standand output
-  *
-  *Return: On success 1.
-  *On error, -1 is returned, and errno is set appropriately.
-  */
-
-/**
   *main- Entry
   *
-  *Return: 0
+  *Return: Always 0 (Success)
   */
-
-int _putchar(char c);
 
 int main(void)
 {
+	/**
+	  *_putchar -writes character to standard output
+	  *
+	  *Return: On success 1
+	  *On error, -1 is returned, and errno is set appropriately
+	  */
+
 	int _putchar(char c);
 	return (write(1, &"_putchar\n", 9));
 
