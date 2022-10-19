@@ -3,13 +3,13 @@
 /**
   *add - a function that adds two integers and returns the result.
   *
-  *@int1: first integer
-  *@int2: second integer
+  *@x: first integer
+  *@y: second integer
   *
-  *Return: int1 + int2
+  *Return: x + y
   */
 
-int add(int1, int2)
+int add(int x, int y)
 {
-	return (int1 + int2);
+	return (x + y);
 }
