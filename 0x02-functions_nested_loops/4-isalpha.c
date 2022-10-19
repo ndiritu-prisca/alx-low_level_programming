@@ -8,7 +8,7 @@
   *Return: 1 if c is a letter, uppercase or lowercase, otherwise return 0.
   */
 
-int _isalpha(int c);
+int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && C <= 'Z'))
 		return (1);
