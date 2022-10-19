@@ -1,4 +1,6 @@
-#include <main.h>
+#include "main.h"
+#include <stdio.h>
+#include <unistd.h>
 
 /**
   *_putchar - writes character to standand output
@@ -7,7 +9,18 @@
   *On error, -1 is returned, and errno is set appropriately.
   */
 
-int _putchar(char)
+/**
+  *main- Entry
+  *
+  *Return: 0
+  */
+
+int _putchar(char c);
+
+int main(void)
 {
-	return (write(1, "_putchar", 1))
+	int _putchar(char c);
+	return (write(1, &"_putchar\n", 9));
+
+	return (0);
 }
