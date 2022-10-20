@@ -19,11 +19,11 @@ int main(void)
 	{
 		if (j != 20365011074)
 		{
-			printf("%1d, " j);
+			printf("%ld, " j);
 		}
 		else
 		{
-			printf("%1d\n", j);
+			printf("%ld\n", j);
 		}
 		com = j + k;
 		j = k;
