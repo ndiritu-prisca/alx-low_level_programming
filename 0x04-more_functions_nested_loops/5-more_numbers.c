@@ -19,7 +19,7 @@ void more_numbers(void)
 				j = k;
 			else
 			{
-				i = k / 10; b = c % 10;
+				i = k / 10; j = k % 10;
 				_putchar(i + '0');
 			}
 			_putchar(j + '0');
