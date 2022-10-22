@@ -9,21 +9,18 @@
 
 void more_numbers(void)
 {
-	char i, j, k, n;
+	int number, tens, units, row;
 
-	for (n = 0; n < 10; n++)
+	for (row = 1; row <= 10; row++)
 	{
-		for (k = 0; k <= 14; k++)
+		for (number = 0; number <= 14; number++)
 		{
-			if (k < 10)
-				j = k;
-			else
-			{
-				i = k / 10;
-				j = k % 10;
-				_putchar('0' + i);
-			}
-			_putchar('0' + j);
+			tens = number / 10;
+			units = number % 10;
+			if (number > 9)
+				_putchar(tens + '0');
+
+			_putchar(units + '0');
 		}
 		_putchar('\n')
 	}
