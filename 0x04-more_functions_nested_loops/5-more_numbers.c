@@ -19,10 +19,11 @@ void more_numbers(void)
 				j = k;
 			else
 			{
-				i = k / 10; j = k % 10;
-				_putchar(i + '0');
+				i = k / 10;
+				j = k % 10;
+				_putchar('0' + i);
 			}
-			_putchar(j + '0');
+			_putchar('0' + j);
 		}
 		_putchar('\n')
 	}
