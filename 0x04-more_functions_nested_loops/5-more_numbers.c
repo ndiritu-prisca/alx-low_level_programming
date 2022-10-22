@@ -13,11 +13,11 @@ void more_numbers(void)
 
 	for (row = 1; row <= 10; row++)
 	{
-		for (num = 0; number <= 14; number++)
+		for (num = 0; num <= 14; num++)
 		{
-			tens = number / 10;
-			units = number % 10;
-			if (number > 9)
+			tens = num / 10;
+			units = num % 10;
+			if (num > 9)
 				_putchar(tens + '0');
 
 			_putchar(units + '0');
