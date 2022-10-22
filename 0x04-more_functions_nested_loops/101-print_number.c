@@ -38,7 +38,7 @@ void print_number(int n)
 		to_power = to_power * 10;
 		x++;
 	}
-	y = power;
+	y = to_power;
 	while (y >= 1)
 	{
 		n2 = (t / y) % 10;
