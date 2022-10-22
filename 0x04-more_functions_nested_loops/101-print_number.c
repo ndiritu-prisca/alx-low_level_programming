@@ -33,10 +33,10 @@ void print_number(int n)
 	to_power = 1;
 	x = 1;
 
-	while (i < digits)
+	while (x < digits)
 	{
 		to_power = to_power * 10;
-		i++;
+		x++;
 	}
 	y = power;
 	while (y >= 1)
