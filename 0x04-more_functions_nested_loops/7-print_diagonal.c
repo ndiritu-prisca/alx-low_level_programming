@@ -10,23 +10,17 @@ void print_diagonal(int n)
 {
 	int row, line_num;
 
-	if (n < 0)
+	if (n <= 0)
 	{
 		_putchar('\n');
 	}
-	else
+	for (row = 0; row <= n; row++)
 	{
-		for (row = 1; row <= n; row++)
+		for (line_num = 0; line_num < row - 1; line_num++)
 		{
-			if (row > 1)
-			{
-				for (line_num = 1; line_num <= row - 1; line_num++)
-				{
-					_putchar(' ');
-				}
-			}
+			_putchar(' ');
+		}
 			_putchar('\\');
 			_putchar('\n');
-		}
 	}
 }
