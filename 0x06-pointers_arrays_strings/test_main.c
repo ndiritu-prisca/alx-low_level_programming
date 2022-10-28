@@ -18,5 +18,6 @@ int main(void)
 	printf("Value of s2[2]: %d\n", s2[2]);
 	printf("Value of s1 in hexadecimal: %p\n", s1);
 	printf("Value of s2 in hexadecimal: %p\n", s2);
+	printf("sizeof string: %lu\n", sizeof(s1));
 	return (0);
 }
