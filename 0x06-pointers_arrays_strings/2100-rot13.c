@@ -20,7 +20,7 @@ char *rot13(char *str)
 				str[i] = str[i] + 13;	
 
 			else
-				str[i] = str[i - 13];
+				str[i] = str[i] - 13;
 
 			i++;
 		}
