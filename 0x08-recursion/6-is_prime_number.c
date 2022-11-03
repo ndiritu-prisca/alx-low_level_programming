@@ -15,7 +15,7 @@ int check_prime(int i, int j)
 	if (i % j == 0)
 		return (0);
 	else
-		return (check_prime(x, y + 1));
+		return (check_prime(i, j + 1));
 }
 
 /**
