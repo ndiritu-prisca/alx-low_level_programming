@@ -21,7 +21,8 @@ char *rot13(char *str)
 				str[i] = str[i] + 13;
 				i++;
 			}
-			else
+			while ((str[i] >= 'n' && str[i] <= 'z') ||
+					(str[i] >= 'N' && str[i] <= 'Z'))
 			{
 				str[i] = str[i] - 13;
 				i++;
