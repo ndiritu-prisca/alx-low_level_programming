@@ -13,13 +13,19 @@ int main(void)
 	 char *p;
 
 	 p = rot13(s);
-	 printf("%s\n", p);
-	 printf("%s\n", s);
+	 printf("%s", p);
+	 printf("------------------------------------\n");
+	 printf("%s", s);
+	 printf("------------------------------------\n");
 	 p = rot13(s);
-	 printf("%s\n", p);
-	 printf("%s\n", s);
+	 printf("%s", p);
+	 printf("------------------------------------\n");
+	 printf("%s", s);
+	 printf("------------------------------------\n");
 	 p = rot13(s);
-	 printf("%s\n", p);
-	 printf("%s\n", s);
+	 printf("%s", p);
+	 printf("------------------------------------\n");
+	 printf("%s", s);
+	 printf("------------------------------------\n");
 	 return (0);
 }
