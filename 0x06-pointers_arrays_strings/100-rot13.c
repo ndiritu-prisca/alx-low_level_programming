@@ -17,10 +17,15 @@ char *rot13(char *str)
 		{
 			if ((str[i] >= 'a' && str[i] <= 'm') ||
 					(str[i] >= 'A' && str[i] <= 'M'))
+			{
 				str[i] = str[i] + 13;
+				i++;
+			}
 			else
+			{
 				str[i] = str[i] - 13;
-			i++;
+				i++;
+			}
 		}
 		i++;
 	}
