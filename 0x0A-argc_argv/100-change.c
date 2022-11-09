@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 				else if (cents % 5 < cents)
 					cents -= 5;
 				else if (cents % 2 < cents)
-					cents -= 5;
+					cents -= 2;
 				else if (cents % 1 < cents)
 					cents -= 1;
 			}
