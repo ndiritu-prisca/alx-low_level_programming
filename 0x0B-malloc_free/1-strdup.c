@@ -33,22 +33,15 @@ char *_strdup(char *str)
 	int n;
 	char *p;
 
+	if (str == NULL)
+		return (NULL);
+
 	n = _strlen(str);
 	p = malloc(sizeof(*str) * n);
-	if (str == 0)
-	{
-		write(1, &"failed to allocate memory\n", 26);
-		return (0);
-	}
-	else if (str != 0)
-	{
-		if (p == 0)
-			return (0);
-		else if (p != 0)
-		{
-			for (; i < n; i++)
-				p[i] = *(str + i);
-		}
-	}
+
+	if (p == NULL)
+		return (NULL);
+	for (; i < n; i++)
+		p[i] = *(str + i);
 	return (p);
 }
