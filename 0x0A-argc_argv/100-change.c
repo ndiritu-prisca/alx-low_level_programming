@@ -24,15 +24,15 @@ int main(int argc, char *argv[])
 		{
 			for (coins = 0; cents > 0; coins++)
 			{
-				if (cents % 25 >= 0)
+				if (cents % 25 < cents)
 					cents -= 25;
-				else if (cents % 10 >= 0)
+				else if (cents % 10 < cents)
 					cents -= 10;
-				else if (cents % 5 >= 0)
+				else if (cents % 5 < cents)
 					cents -= 5;
-				else if (cents % 2 >= 0)
+				else if (cents % 2 < cents)
 					cents -= 5;
-				else if (cents % 1 >= 0)
+				else if (cents % 1 < cents)
 					cents -= 1;
 			}
 			printf("%d\n", coins);
