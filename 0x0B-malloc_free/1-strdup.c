@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
   *_strlen - a function that returns the length of a string.
@@ -36,7 +37,8 @@ char *_strdup(char *str)
 	p = malloc(sizeof(*str) * n);
 	if (str == 0)
 	{
-		_putchar('\0');
+		write(1, &"failed to allocate memory\n", 26);
+		return (0);
 	}
 	else if (str != 0)
 	{
