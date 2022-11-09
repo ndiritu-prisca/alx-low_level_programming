@@ -35,7 +35,9 @@ char *_strdup(char *str)
 	n = _strlen(str);
 	p = malloc(sizeof(*str) * n);
 	if (str == 0)
-		return (0);
+	{
+		_putchar('\0');
+	}
 	else if (str != 0)
 	{
 		if (p == 0)
