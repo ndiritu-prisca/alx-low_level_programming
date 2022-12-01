@@ -1,0 +1,33 @@
+#include "lists.h"
+#include <stdio.h>
+
+/**
+  * print_listint_safe - a function that prints a listint_t linked list.
+  * @head: first pointer
+  * Return: number of nodes in list, 98 if function fails.
+  */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t count = 0;
+	const listint_t *temp = head;
+	const listint_t *temp2 = head;
+
+	while (head != NULL)
+	{
+			while (temp && temp2 && temp2->next && head)
+			{
+			temp = temp->next;
+			temp2 = temp2->next->next;
+			if (temp == temp2)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				exit(98);
+			}
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+			count++;
+		}
+		head = NULL;
+	}
+	return (count);
+}
