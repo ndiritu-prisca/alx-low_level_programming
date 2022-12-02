@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <unistd.h>
 
 /**
   * get_nodeint_at_index - a function that returns the nth node of a listint_t
@@ -9,11 +10,19 @@
   */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int i;
+	unsigned int i, j;
+	listint_t *temp = head;
+
+	for (j = 0; temp != NULL; j++)
+		temp = temp->next;
 
 	for (i = 0; i < index; i++)
 	{
 		head = head->next;
+	}
+	if (index >= j)
+	{
+		write(1, "(nil)\n", 6);
 	}
 
 	if (!head)
