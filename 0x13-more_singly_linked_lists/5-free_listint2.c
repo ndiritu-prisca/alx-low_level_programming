@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <unistd.h>
 
 /**
   * free_listint2 -  a function that frees a listint_t list.
@@ -13,5 +14,9 @@ void free_listint2(listint_t **head)
 			free_listint2(&(*head)->next);
 		free(*head);
 		*head = NULL;
+	}
+	else
+	{
+		write(1, &"Freed !\n", 8);
 	}
 }
