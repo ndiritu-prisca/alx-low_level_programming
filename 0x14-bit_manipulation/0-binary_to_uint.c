@@ -25,12 +25,15 @@ unsigned int binary_to_uint(const char *b)
 
 	for (p = 0; b >= s; p++)
 	{
-		if (*b != '0' && *b != '1')
+		if (*b == '0' || *b == '1')
+		{
+			value = *b - '0';
+			num = value * (1 << p);
+			sum = sum + num;
+			b--;
+		}
+		else 
 			return (0);
-		value = *b - '0';
-		num = value * (1 << p);
-		sum = sum + num;
-		b--;
 	}
 	return (sum);
 }
