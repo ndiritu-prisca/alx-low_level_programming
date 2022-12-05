@@ -10,6 +10,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int i = 1;
 
+	/*validate if index is greater than the unsigned bits*/
 	if (index > 64)
 		return (-1);
 	if (n == 0)
