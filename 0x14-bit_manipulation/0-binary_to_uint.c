@@ -32,7 +32,7 @@ unsigned int binary_to_uint(const char *b)
 			sum = sum + num;
 			b--;
 		}
-		else 
+		else
 			return (0);
 	}
 	return (sum);
