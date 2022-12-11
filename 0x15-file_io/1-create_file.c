@@ -9,19 +9,20 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	int count;
-	int w;
+	ssize_t w;
+	size_t count;
+	char *str = text_content;
 
 	if (filename == NULL)
 		return (-1);
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 00600);
 	if (fd == -1)
 		return (-1);
 	if (text_content != NULL)
 	{
 		for (count = 0; *text_content != '\0'; count++)
 			;
-		w = write(fd, text_content, count);
+		w = write(fd, str, count);
 		if (w == -1)
 			return (-1);
 	}
