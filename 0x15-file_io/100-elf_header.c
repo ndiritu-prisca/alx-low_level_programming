@@ -18,7 +18,7 @@ void printClass(char *ptr)
 }
 
 /**
-  * printData =a funtion that prints data of elf header
+  * printData - a funtion that prints data of elf header
   * @ptr: header information
   * Return: void
   */
@@ -176,16 +176,24 @@ int main(int argc, char *argv[])
 	char ptr[32];
 
 	if (argc != 2)
-		return (1);
+	{
+		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
+		exit(98);
+	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (2);
+	{
+		dprintf(STDERR_FILENO, "Error: The file can not be open\n");
+		exit(98);
+	}
 	rd = read(fd, ptr, 32);
 	if (rd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: The file can not be read\n");
 		return (3);
 	if (ptr[0] != 0x7f || ptr[1] != 'E' || ptr[2] != 'L' || ptr[3] != 'F')
 	{
-		dprintf(2, "Not an ELF file\n");
+		dprintf(STDERR_FILENO, "Error: It is not an ELF\n");
 		exit(98);
 	}
 	printf("ELF Header:\n  Magic:  ");
