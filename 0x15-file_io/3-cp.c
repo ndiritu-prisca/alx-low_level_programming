@@ -41,8 +41,7 @@ int close_fd(int fd)
 int main(int ac, char *argv[])
 {
 	char buf[1024];
-	ssize_t rd;
-	ssize_t wr;
+	ssize_t rd, wr, rw = 1;
 	size_t num = 1024;
 	int fd1, fd2;
 
@@ -59,18 +58,23 @@ int main(int ac, char *argv[])
 	{
 		errorMsg(98, "Error: Can't read from file", argv[1]);
 	}
-	rd = read(fd1, buf, num);
-	if (rd == -1)
-		errorMsg(98, "Error: Can't read from file", argv[1]);
 
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	if (fd2 == -1)
 	{
 		errorMsg(99, "Can't write to", argv[2]);
 	}
-	wr = write(fd2, buf, rd);
-	if (wr == -1)
-		errorMsg(99, "Can't write to", argv[2]);
+	while (rw)
+	{
+		rd = read(fd1, buf, num);
+		if (rd == -1)
+			errorMsg(98, "Error: Can't read from file", argv[1]);
+		else if (rd == 0)
+			break;
+		wr = write(fd2, buf, rd);
+		if (wr == -1)
+			errorMsg(99, "Can't write to", argv[2]);
+	}
 
 	close_fd(fd1);
 	close_fd(fd2);
