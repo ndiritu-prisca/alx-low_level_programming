@@ -59,10 +59,10 @@ int main(int ac, char *argv[])
 		errorMsg(98, "Error: Can't read from file", argv[1]);
 	}
 
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
-		errorMsg(99, "Can't write to", argv[2]);
+		errorMsg(99, "Error: Can't write to", argv[2]);
 	}
 	rd = read(fd1, buf, num);
 	if (rd == -1)
@@ -71,7 +71,7 @@ int main(int ac, char *argv[])
 	{
 		wr = write(fd2, buf, rd);
 		if (wr == -1)
-			errorMsg(99, "Can't write to", argv[2]);
+			errorMsg(99, "Error: Can't write to", argv[2]);
 		rd = read(fd1, buf, num);
 		if (rd == -1)
 			errorMsg(98, "Error: Can't read from file", argv[1]);
