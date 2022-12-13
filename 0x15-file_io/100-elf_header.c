@@ -179,17 +179,17 @@ int main(int argc, char *argv[])
 		return (1);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (1);
+		return (2);
 	rd = read(fd, ptr, 32);
 	if (rd == -1)
-		return (1);
+		return (3);
 	if (ptr[0] != 0x7f || ptr[1] != 'E' || ptr[2] != 'L' || ptr[3] != 'F')
 	{
 		dprintf(2, "readelf: Error: hellofile:");
 		dprintf(2, " Failed to read file header\n");
 		return (98);
 	}
-	printf("ELF Header:\n  Magic:   ");
+	printf("ELF Header:\n  Magic:  ");
 	for (i = 0; i < 16; i++)
 		printf("%02x ", (unsigned int) ptr[i]);
 	printf("\n");
@@ -199,5 +199,6 @@ int main(int argc, char *argv[])
 	printABI(ptr);
 	printType(ptr);
 	printEntry(ptr);
+	close(fd);
 	return (0);
 }
