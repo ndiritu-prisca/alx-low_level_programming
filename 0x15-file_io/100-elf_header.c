@@ -185,9 +185,8 @@ int main(int argc, char *argv[])
 		return (3);
 	if (ptr[0] != 0x7f || ptr[1] != 'E' || ptr[2] != 'L' || ptr[3] != 'F')
 	{
-		dprintf(2, "readelf: Error: hellofile:");
-		dprintf(2, " Failed to read file header\n");
-		return (98);
+		dprintf(2, "Not an ELF file\n");
+		exit(98);
 	}
 	printf("ELF Header:\n  Magic:  ");
 	for (i = 0; i < 16; i++)
