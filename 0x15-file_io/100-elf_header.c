@@ -190,7 +190,8 @@ int main(int argc, char *argv[])
 	if (rd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: The file can not be read\n");
-		return (3);
+		exit(98);
+	}
 	if (ptr[0] != 0x7f || ptr[1] != 'E' || ptr[2] != 'L' || ptr[3] != 'F')
 	{
 		dprintf(STDERR_FILENO, "Error: It is not an ELF\n");
