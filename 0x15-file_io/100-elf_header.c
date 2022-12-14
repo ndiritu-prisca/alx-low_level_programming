@@ -136,7 +136,7 @@ void printEntry(char *ptr)
 {
 	int x, y;
 
-	printf(" Entry point address:               ");
+	printf("  Entry point address:               ");
 	if (ptr[4] == 2)
 		y = 0x1f;
 	else
@@ -197,7 +197,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: It is not an ELF\n");
 		exit(98);
 	}
-	printf("ELF Header:\n  Magic:  ");
+	printf("ELF Header:\n");
+	printf("  Magic:   ");
 	for (i = 0; i < 16; i++)
 		printf("%02x ", (unsigned int) ptr[i]);
 	printf("\n");
