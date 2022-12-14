@@ -8,7 +8,7 @@
   */
 void printClass(char *ptr)
 {
-	printf("  %-35s", "Class:");
+	printf("  Class:                             ");
 	if (ptr[4] == 1)
 		printf("ELF32\n");
 	else if (ptr[4] == 2)
@@ -24,7 +24,7 @@ void printClass(char *ptr)
   */
 void printData(char *ptr)
 {
-	printf("  %-35s", "Data:");
+	printf("  Data:                              ");
 	if (ptr[5] == 1)
 		printf("2's complement, little endian\n");
 	else if (ptr[5] == 2)
@@ -40,7 +40,7 @@ void printData(char *ptr)
   */
 void printVersion(char *ptr)
 {
-	printf("  %-35s", "Version:");
+	printf("  Version:                           ");
 	if (ptr[6] <= EV_CURRENT)
 	{
 		printf("%d", ptr[6]);
@@ -60,7 +60,7 @@ void printVersion(char *ptr)
   */
 void printABI(char *ptr)
 {
-	printf("  %-35s", "OS/ABI:");
+	printf("  OS/ABI:                            ");
 	if (ptr[7] == 0)
 		printf("UNIX - System V\n");
 	else if (ptr[7] == 1)
@@ -97,7 +97,7 @@ void printABI(char *ptr)
 		printf("UNIX - CloudABI\n");
 	else
 		printf("<unknown: %02x>\n", ptr[7]);
-	printf("  %-35s%d\n", "ABI Version:", ptr[8]);
+	printf("  ABI Version:                       %d\n", ptr[8]);
 }
 
 /**
@@ -113,7 +113,7 @@ void printType(char *ptr)
 		n = 16;
 	else
 		n = 17;
-	printf("  %-35s", "Type:");
+	printf("  Type:                              ");
 	if (ptr[n] == 1)
 		printf("REL (Relocatable file)\n");
 	else if (ptr[n] == 2)
@@ -136,7 +136,7 @@ void printEntry(char *ptr)
 {
 	int x, y;
 
-	printf("  %-35s0x", "Entry point address:");
+	printf(" Entry point address:               ");
 	if (ptr[4] == 2)
 		y = 0x1f;
 	else
@@ -173,7 +173,7 @@ int main(int argc, char *argv[])
 {
 	int fd, i;
 	ssize_t rd;
-	char ptr[32];
+	char ptr[64];
 
 	if (argc != 2)
 	{
@@ -186,7 +186,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: The file can not be open\n");
 		exit(98);
 	}
-	rd = read(fd, ptr, 32);
+	rd = read(fd, ptr, 64);
 	if (rd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: The file can not be read\n");
