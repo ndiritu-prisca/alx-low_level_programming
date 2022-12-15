@@ -215,9 +215,9 @@ void printEntry(unsigned long int e_entry, unsigned char *e_ident)
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)e_entry);
+		printf("%x\n", (unsigned int)e_entry);
 	else
-		printf("%#lx\n", e_entry);
+		printf("%lx\n", e_entry);
 }
 
 /**
