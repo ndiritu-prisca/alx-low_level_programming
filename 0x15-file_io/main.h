@@ -8,17 +8,21 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stddef.h>
+#include <elf.h>
 
 ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 void errorMsg(int code, char *msg, const char *filename);
 int close_fd(int fd);
-void printClass(char *ptr);
-void printData(char *ptr);
-void printVersion(char *ptr);
-void printABI(char *ptr);
-void printType(char *ptr);
-void printEntry(char *ptr);
+void ELFcheck(unsigned char *e_ident);
+void printMagic(unsigned char *e_ident);
+void printClass(unsigned char *e_ident);
+void printData(unsigned char *e_ident);
+void printVersion(unsigned char *e_ident);
+void printOSABI(unsigned char *e_ident);
+void printABI(unsigned char *e_ident);
+void printType(unsigned int e_type, unsigned char *e_ident);
+void printEntry(unsigned long int e_type, unsigned char *e_ident);
 
 #endif /*MAIN_H*/
